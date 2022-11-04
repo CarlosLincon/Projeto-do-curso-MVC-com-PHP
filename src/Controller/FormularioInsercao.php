@@ -2,13 +2,14 @@
 
 namespace Alura\Cursos\Controller;
 
-class FormularioInsercao implements InterfaceControladorRequisicao
+class FormularioInsercao extends ControllerComHtml implements InterfaceControladorRequisicao
 {
 
 
     public function processoRequisicao(): void
     {
-        $titulo = 'Adicionar novo curso';
-        require __DIR__ . '/../../view/cursos/formulario.php';
+        echo  $this->rederizaHtml('cursos/formulario.php', [
+            'titulo' => 'Adicionar novo curso'
+        ]);
     }
 }
